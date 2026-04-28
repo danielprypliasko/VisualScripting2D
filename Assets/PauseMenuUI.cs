@@ -1,10 +1,12 @@
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public partial class PauseMenuUI : MonoBehaviour
 {
     private PauseManager _pauseManager;
+    public AudioSource clickSound;
 
     private void Start()
     {
@@ -18,20 +20,35 @@ public partial class PauseMenuUI : MonoBehaviour
 
     public void OnResumeClick() 
     {
+        
         if (_pauseManager != null)
         {
-            _pauseManager.Resume();
+            StartCoroutine(PlaySoundAndLoad());
         }
     }
 
     public void OnQuitClick()
     { 
+        
         Time.timeScale = 1f;
 
-        if (SceneManager.GetSceneByName("PauseMenuScene").isLoaded) 
-        {
-            SceneManager.UnloadSceneAsync("PauseMenuScene");
-        }
+        StartCoroutine(PlaySoundAndUnload());
+    }
+
+    IEnumerator PlaySoundAndLoad() 
+    {
+        clickSound.Play();
+
+        yield return new WaitForSecondsRealtime(clickSound.clip.length);
+
+        _pauseManager.Resume();
+    }
+
+    IEnumerator PlaySoundAndUnload()
+    {
+        clickSound.Play();
+
+        yield return new WaitForSecondsRealtime(clickSound.clip.length);
 
         SceneManager.LoadScene("MainMenuScene");
     }
