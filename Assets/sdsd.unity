@@ -2050,6 +2050,7 @@ GameObject:
   - component: {fileID: 1132292261}
   - component: {fileID: 1132292260}
   - component: {fileID: 1132292259}
+  - component: {fileID: 1132292263}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2175,6 +2176,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1132292263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132292258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4777168ffb2396444990b0a77204226a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraController
+  player: {fileID: 10594484}
+  moveSpeed: 4
+  offset: {x: 0, y: 0, z: 0}
+  tilemap: {fileID: 1638897148}
+  minBounds: {x: 0, y: 0}
+  maxBounds: {x: 0, y: 0}
 --- !u!1 &1141039031
 GameObject:
   m_ObjectHideFlags: 0
