@@ -1,30 +1,98 @@
-using System;
-using System.Runtime.CompilerServices;
+using System.Collections;
 using UnityEngine;
 
-public class StartNode : Node<object, int>
+public class StartNode : Node
 {
+    [SerializeField] private bool fireOnStart = true;
+    [SerializeField] private bool loop;
+    [SerializeField] private float interval = 1f;
+    [SerializeField] private Transform outputPoint;
 
-    private int wattage = 1;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created  
-    void Start()
+    private Coroutine pulseRoutine;
+
+    protected override void OnEnable()
     {
-
+        base.OnEnable();
+        RestartPulseLoop();
     }
 
-    // Update is called once per frame  
-    void Update()
+    private void OnDisable()
     {
-
+        StopPulseLoop();
     }
 
-    public override int FeedOutputs(int watts)
+    public override void Execute(string inputPort, NodeFlowContext context)
     {
-        return watts;
     }
 
-    public override object TakeInputs()
+    public override NodeValue Evaluate(string outputPort, NodeFlowContext context)
     {
-        return new object();
+        return NodeValue.Flow;
+    }
+
+    public override Transform GetInputAnchor(string port)
+    {
+        return null;
+    }
+
+    public override Transform GetOutputAnchor(string port)
+    {
+        return NormalizePort(port, FlowOutPort) == FlowOutPort ? ResolveAnchor(outputPoint) : null;
+    }
+
+    [ContextMenu("Pulse")]
+    public void Pulse()
+    {
+        Pulse(CreateContext());
+    }
+
+    private void RestartPulseLoop()
+    {
+        StopPulseLoop();
+
+        if (!Application.isPlaying || !fireOnStart)
+        {
+            return;
+        }
+
+        pulseRoutine = StartCoroutine(PulseLoop());
+    }
+
+    private void StopPulseLoop()
+    {
+        if (pulseRoutine == null)
+        {
+            return;
+        }
+
+        StopCoroutine(pulseRoutine);
+        pulseRoutine = null;
+    }
+
+    private IEnumerator PulseLoop()
+    {
+        yield return null;
+
+        var delay = Mathf.Max(0.02f, interval);
+
+        while (enabled)
+        {
+            Pulse(CreateContext());
+
+            if (!loop)
+            {
+                break;
+            }
+
+            yield return new WaitForSeconds(delay);
+        }
+
+        pulseRoutine = null;
+    }
+
+    private void Pulse(NodeFlowContext context)
+    {
+        PulseVisual();
+        Emit(FlowOutPort, context);
     }
 }
