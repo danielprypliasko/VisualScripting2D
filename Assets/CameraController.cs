@@ -28,8 +28,8 @@ public class CameraController : MonoBehaviour
     {
         Vector3 pos = Vector3.Lerp(transform.position, player.position + offset, moveSpeed * Time.deltaTime); // Smooths movement
 
-        pos.x = Mathf.Clamp(pos.x, minBounds.x + 12.1f, maxBounds.x - 11.1f); // Stops the camera going out of bounds (Plus and minus 12 for camera x size)
-        pos.y = Mathf.Clamp(pos.y, minBounds.y + 5.2f, maxBounds.y - 5.2f); // Plus and minus 5 for camera y size
+        pos.x = Mathf.Clamp(pos.x, minBounds.x + 9f, maxBounds.x - 9f); // Stops the camera going out of bounds (Plus and minus 12 for camera x size)
+        pos.y = Mathf.Clamp(pos.y, minBounds.y + 5f, maxBounds.y - 5f); // Plus and minus 5 for camera y size
 
         pos.z = -10f; // Fixes z
         transform.position = pos;
