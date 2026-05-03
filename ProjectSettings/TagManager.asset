@@ -50,11 +50,14 @@ TagManager:
   - name: Player
     uniqueID: 4208087975
     locked: 0
-  - name: Gate
-    uniqueID: 854798043
-    locked: 0
   - name: Nature
     uniqueID: 352419615
+    locked: 0
+  - name: Fence
+    uniqueID: 239354803
+    locked: 0
+  - name: Gate
+    uniqueID: 854798043
     locked: 0
   m_RenderingLayers:
   - Default
