@@ -1,25 +1,41 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class StartNode : Node
 {
-    [SerializeField] private bool fireOnStart = true;
+    [SerializeField] private bool fireOnStart;
     [SerializeField] private bool loop;
     [SerializeField] private float interval = 1f;
     [SerializeField] private Transform outputPoint;
 
     private Coroutine pulseRoutine;
 
+    [SerializeField] private Transform player;
+
     protected override void OnEnable()
     {
         base.OnEnable();
         RestartPulseLoop();
+    }
+    
+    private void Update()
+    {
+        if (!Keyboard.current.eKey.wasPressedThisFrame) return;
+
+        float distance = Vector2.Distance(transform.position, player.position);
+        if (distance <= 2)
+        {
+            Pulse(CreateContext());
+        }
     }
 
     private void OnDisable()
     {
         StopPulseLoop();
     }
+
+   
 
     public override void Execute(string inputPort, NodeFlowContext context)
     {
