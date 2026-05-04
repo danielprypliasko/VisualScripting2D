@@ -11726,6 +11726,14 @@ PrefabInstance:
       propertyPath: dialogueBox
       value: 
       objectReference: {fileID: 29019091}
+    - target: {fileID: 1929954325090445031, guid: f5dcd99d50e080b43bafbc994882a532, type: 3}
+      propertyPath: dialogueLines.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1929954325090445031, guid: f5dcd99d50e080b43bafbc994882a532, type: 3}
+      propertyPath: 'dialogueLines.Array.data[11]'
+      value: WELCOME!!!!
+      objectReference: {fileID: 0}
     - target: {fileID: 2976613004321811277, guid: f5dcd99d50e080b43bafbc994882a532, type: 3}
       propertyPath: m_Color.a
       value: 0.5882353
