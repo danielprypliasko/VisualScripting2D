@@ -352,6 +352,22 @@ PrefabInstance:
       propertyPath: m_text
       value: Welcome.
       objectReference: {fileID: 0}
+    - target: {fileID: 7345950455574119012, guid: 98c3c1f6077bbc9488d6b52faf57b1d8, type: 3}
+      propertyPath: m_fontSize
+      value: 22.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 7345950455574119012, guid: 98c3c1f6077bbc9488d6b52faf57b1d8, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 7345950455574119012, guid: 98c3c1f6077bbc9488d6b52faf57b1d8, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8865892488585967814, guid: 98c3c1f6077bbc9488d6b52faf57b1d8, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7419,7 +7435,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 350, y: -225}
+  m_AnchoredPosition: {x: 270, y: -220}
   m_SizeDelta: {x: 500, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &440930999
@@ -7473,12 +7489,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 52
-  m_fontSizeBase: 52
+  m_fontSize: 18
+  m_fontSizeBase: 16
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 16
+  m_fontSizeMax: 18
   m_fontStyle: 3
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -7803,7 +7819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -8064,7 +8080,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 2123899687}
   - {fileID: 1771420079}
-  - {fileID: 1350268540}
   - {fileID: 90053303}
   - {fileID: 121942705}
   - {fileID: 1606656795}
