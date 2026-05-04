@@ -2735,7 +2735,7 @@ GameObject:
   m_Component:
   - component: {fileID: 790310323}
   m_Layer: 0
-  m_Name: DoorOpen
+  m_Name: Level1 Puzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

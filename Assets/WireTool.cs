@@ -61,7 +61,8 @@ public class SimpleWireTool : MonoBehaviour
 
     private void TryHandleWiring(bool isValueMode)
     {
-        Node closestNode = GetClosestNode();
+        string port;
+        Node closestNode = GetClosestNode(out port);
         if (closestNode == null) return;
 
         if (!CanNodeHandleWire(closestNode, isValueMode))
@@ -86,6 +87,14 @@ public class SimpleWireTool : MonoBehaviour
         else
         {
             if (closestNode == firstNode) return;
+
+            // Set the correct input port before connecting
+            if (activeWire is ValueWire valueWire)
+            {
+                if (System.Enum.TryParse(port, out ValueWireInputPort parsedPort))
+                    valueWire.SetInputPort(parsedPort);
+            }
+
             activeWire.Target = closestNode;
             firstNode = null;
             activeWire = null;
@@ -123,33 +132,75 @@ public class SimpleWireTool : MonoBehaviour
     {
         Wire[] existingWires = Object.FindObjectsByType<Wire>(FindObjectsSortMode.None);
         WireKind targetKind = isValueWire ? WireKind.Value : WireKind.Flow;
+
+        int count = 0;
         foreach (var w in existingWires)
         {
             if (w.Kind != targetKind) continue;
-            if (checkingSource && w.Source == node) return true;
-            if (!checkingSource && w.Target == node) return true;
+            if (checkingSource && w.Source == node) count++;
+            if (!checkingSource && w.Target == node) count++;
         }
-        return false;
+
+        if (isValueWire && !checkingSource)
+        {
+            int maxInputs = GetMaxValueInputs(node);
+            return count >= maxInputs;
+        }
+        return count > 0;
+    }
+
+    private int GetMaxValueInputs(Node node)
+    {
+        // Check which named ports the node supports
+        int count = 0;
+        string[] commonPorts = { "Value", "A", "B", "C" };
+        foreach (var port in commonPorts)
+        {
+            if (node.GetInputAnchor(port) != null) count++;
+        }
+        return Mathf.Max(1, count);
     }
 
     private bool CanNodeHandleWire(Node node, bool isValueWire)
     {
         if (isValueWire)
-            return node.GetOutputAnchor(Node.ValuePort) != null || node.GetInputAnchor(Node.ValuePort) != null;
-
+        {
+            string[] ports = { Node.ValuePort, "A", "B" };
+            foreach (string p in ports)
+            {
+                if (node.GetOutputAnchor(p) != null || node.GetInputAnchor(p) != null)
+                    return true;
+            }
+            return false;
+        }
         return node.GetOutputAnchor(Node.FlowOutPort) != null || node.GetInputAnchor(Node.FlowInPort) != null;
     }
 
-    private Node GetClosestNode()
+    private Node GetClosestNode(out string port)
     {
+        port = Node.ValuePort;
         Node[] allNodes = Object.FindObjectsByType<Node>(FindObjectsSortMode.None);
         Node closest = null;
         float minDistance = interactDistance;
 
         foreach (Node n in allNodes)
         {
-            float dist = Vector2.Distance(transform.position, n.transform.position);
-            if (dist < minDistance) { minDistance = dist; closest = n; }
+            string[] portsToCheck = { Node.ValuePort, Node.FlowInPort, Node.FlowOutPort, "A", "B" };
+            foreach (string p in portsToCheck)
+            {
+                Transform anchor = currentMode == ToolMode.Value ?
+                    n.GetInputAnchor(p) ?? n.GetOutputAnchor(p):
+                    n.GetInputAnchor(p) ?? n.GetOutputAnchor(p);
+
+                if (anchor == null) continue;
+                float dist = Vector2.Distance(transform.position, anchor.position);
+                if (dist < minDistance)
+                {
+                    minDistance = dist;
+                    closest = n;
+                    port = p;
+                }
+            }
         }
         return closest;
     }
