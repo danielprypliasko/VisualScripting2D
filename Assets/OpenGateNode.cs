@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GateNode : Node
@@ -13,9 +14,15 @@ public class GateNode : Node
             return;
         }
 
-        gateAnimator.SetTrigger("OpenDoor");
+        bool canOpen = context.Graph.Get("value", NodeValue.FromBool(false)).AsBool();
 
-        Emit(FlowOutPort, context);
+        if (canOpen)
+        {
+            gateAnimator.SetTrigger("OpenDoor");
+            Emit(FlowOutPort, context);
+        }
+        ;
+
     }
 
     public override Transform GetInputAnchor(string port)
