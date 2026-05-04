@@ -141,6 +141,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -148,12 +161,12 @@ TextureImporter:
       name: Basic_Charakter_Spritesheet_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 159
-        width: 16
-        height: 18
+        x: 0
+        y: 144
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -170,12 +183,12 @@ TextureImporter:
       name: Basic_Charakter_Spritesheet_1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 159
-        width: 16
-        height: 18
+        x: 48
+        y: 144
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -192,12 +205,12 @@ TextureImporter:
       name: Basic_Charakter_Spritesheet_2
       rect:
         serializedVersion: 2
-        x: 112
-        y: 159
-        width: 16
-        height: 18
+        x: 96
+        y: 144
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -214,12 +227,12 @@ TextureImporter:
       name: Basic_Charakter_Spritesheet_3
       rect:
         serializedVersion: 2
-        x: 160
-        y: 159
-        width: 16
-        height: 18
+        x: 144
+        y: 144
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -236,12 +249,12 @@ TextureImporter:
       name: Basic_Charakter_Spritesheet_4
       rect:
         serializedVersion: 2
-        x: 16
-        y: 111
-        width: 16
-        height: 18
+        x: 0
+        y: 96
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -258,12 +271,12 @@ TextureImporter:
       name: Basic_Charakter_Spritesheet_5
       rect:
         serializedVersion: 2
-        x: 64
-        y: 111
-        width: 16
-        height: 18
+        x: 48
+        y: 96
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -280,12 +293,12 @@ TextureImporter:
       name: Basic_Charakter_Spritesheet_6
       rect:
         serializedVersion: 2
-        x: 112
-        y: 111
-        width: 16
-        height: 18
+        x: 96
+        y: 96
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -302,12 +315,12 @@ TextureImporter:
       name: Basic_Charakter_Spritesheet_7
       rect:
         serializedVersion: 2
-        x: 160
-        y: 111
-        width: 16
-        height: 18
+        x: 144
+        y: 96
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -324,12 +337,12 @@ TextureImporter:
       name: Basic_Charakter_Spritesheet_8
       rect:
         serializedVersion: 2
-        x: 18
-        y: 63
-        width: 12
-        height: 18
+        x: 0
+        y: 48
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -346,12 +359,12 @@ TextureImporter:
       name: Basic_Charakter_Spritesheet_9
       rect:
         serializedVersion: 2
-        x: 66
-        y: 63
-        width: 12
-        height: 18
+        x: 48
+        y: 48
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -368,12 +381,12 @@ TextureImporter:
       name: Basic_Charakter_Spritesheet_10
       rect:
         serializedVersion: 2
-        x: 114
-        y: 63
-        width: 12
-        height: 18
+        x: 96
+        y: 48
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -390,12 +403,12 @@ TextureImporter:
       name: Basic_Charakter_Spritesheet_11
       rect:
         serializedVersion: 2
-        x: 162
-        y: 63
-        width: 12
-        height: 18
+        x: 144
+        y: 48
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -412,12 +425,12 @@ TextureImporter:
       name: Basic_Charakter_Spritesheet_12
       rect:
         serializedVersion: 2
-        x: 18
-        y: 15
-        width: 12
-        height: 18
+        x: 0
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -434,12 +447,12 @@ TextureImporter:
       name: Basic_Charakter_Spritesheet_13
       rect:
         serializedVersion: 2
-        x: 66
-        y: 15
-        width: 12
-        height: 18
+        x: 48
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -456,12 +469,12 @@ TextureImporter:
       name: Basic_Charakter_Spritesheet_14
       rect:
         serializedVersion: 2
-        x: 114
-        y: 15
-        width: 12
-        height: 18
+        x: 96
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -478,12 +491,12 @@ TextureImporter:
       name: Basic_Charakter_Spritesheet_15
       rect:
         serializedVersion: 2
-        x: 162
-        y: 15
-        width: 12
-        height: 18
+        x: 144
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -500,7 +513,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5236dea6d3291934fbed536c0d5aa995
     internalID: 0
     vertices: []
     indices: 
@@ -508,7 +521,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":4.0},"gridSpriteSize":{"x":48.0,"y":48.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Basic_Charakter_Spritesheet_0: -5973495392976344752
       Basic_Charakter_Spritesheet_1: -5939373230659836068
