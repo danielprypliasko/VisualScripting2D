@@ -38,26 +38,26 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Top Layer
-    uniqueID: 1412963297
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
   - name: Ground
-    uniqueID: 3140081887
+    uniqueID: 3983026667
+    locked: 0
+  - name: WalkInFront
+    uniqueID: 1792545535
+    locked: 0
+  - name: Collision
+    uniqueID: 3027860417
     locked: 0
   - name: Player
-    uniqueID: 4208087975
+    uniqueID: 2597734029
     locked: 0
-  - name: Nature
-    uniqueID: 352419615
+  - name: WalkBehind
+    uniqueID: 3259753673
     locked: 0
-  - name: Fence
-    uniqueID: 239354803
-    locked: 0
-  - name: Gate
-    uniqueID: 854798043
+  - name: Decor
+    uniqueID: 3343584859
     locked: 0
   m_RenderingLayers:
   - Default
