@@ -16,19 +16,20 @@ public class GateNode : Node
             return;
         }
 
-        if (XPController.instance != null && !hasGivenXP)
-        {
-            hasGivenXP = true;
-            XPController.instance.AddXp(xpReward);
-
-        }
-
         bool canOpen = context.Graph.Get("value", NodeValue.FromBool(false)).AsBool();
 
         if (canOpen)
         {
             gateAnimator.SetTrigger("OpenDoor");
             gateAnimator.SetTrigger("ActivateMagnet");
+
+
+            if (XPController.instance != null && !hasGivenXP)
+            {
+                hasGivenXP = true;
+                XPController.instance.AddXp(xpReward);
+
+            }
         }
         ;
 

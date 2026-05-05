@@ -274,11 +274,11 @@ PrefabInstance:
       objectReference: {fileID: 121942706}
     - target: {fileID: 492244110207118618, guid: 98c3c1f6077bbc9488d6b52faf57b1d8, type: 3}
       propertyPath: dialogueLines.Array.size
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 492244110207118618, guid: 98c3c1f6077bbc9488d6b52faf57b1d8, type: 3}
       propertyPath: 'dialogueLines.Array.data[0]'
-      value: Objective completed...
+      value: '[+25xp] Objective completed...'
       objectReference: {fileID: 0}
     - target: {fileID: 492244110207118618, guid: 98c3c1f6077bbc9488d6b52faf57b1d8, type: 3}
       propertyPath: 'dialogueLines.Array.data[1]'
@@ -287,28 +287,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 492244110207118618, guid: 98c3c1f6077bbc9488d6b52faf57b1d8, type: 3}
       propertyPath: 'dialogueLines.Array.data[2]'
-      value: "Character: \u201CStill no sign of movement. The buildings look abandoned\u2026\u201D"
+      value: "Character: \u201CStill no sign of movement. The factory looks abandoned...\u201D"
       objectReference: {fileID: 0}
     - target: {fileID: 492244110207118618, guid: 98c3c1f6077bbc9488d6b52faf57b1d8, type: 3}
       propertyPath: 'dialogueLines.Array.data[3]'
-      value: "Character: \u201CWait! I see a light inside one of them! I need to
-        check it out. \u201C"
+      value: "Character: \u201CWait! I see a robot! It's stuck to the magnet...\""
       objectReference: {fileID: 0}
     - target: {fileID: 492244110207118618, guid: 98c3c1f6077bbc9488d6b52faf57b1d8, type: 3}
       propertyPath: 'dialogueLines.Array.data[4]'
-      value: 
+      value: "Character: \u201CI should try help...\""
       objectReference: {fileID: 0}
     - target: {fileID: 492244110207118618, guid: 98c3c1f6077bbc9488d6b52faf57b1d8, type: 3}
       propertyPath: 'dialogueLines.Array.data[5]'
-      value: 
+      value: 'New objective: Power off the magnet and save the robot... '
       objectReference: {fileID: 0}
     - target: {fileID: 492244110207118618, guid: 98c3c1f6077bbc9488d6b52faf57b1d8, type: 3}
       propertyPath: 'dialogueLines.Array.data[6]'
-      value: 
+      value: 'Hint: The compare node returns True if the values are equal... '
       objectReference: {fileID: 0}
     - target: {fileID: 492244110207118618, guid: 98c3c1f6077bbc9488d6b52faf57b1d8, type: 3}
       propertyPath: 'dialogueLines.Array.data[7]'
-      value: 
+      value: 'Hint: For the magnet to be disabled, the comparison has to be True... '
       objectReference: {fileID: 0}
     - target: {fileID: 492244110207118618, guid: 98c3c1f6077bbc9488d6b52faf57b1d8, type: 3}
       propertyPath: 'dialogueLines.Array.data[8]'
@@ -440,6 +439,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8055813305855599249, guid: 98c3c1f6077bbc9488d6b52faf57b1d8, type: 3}
   m_PrefabInstance: {fileID: 121942705}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &121942707 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 492244110207118618, guid: 98c3c1f6077bbc9488d6b52faf57b1d8, type: 3}
+  m_PrefabInstance: {fileID: 121942705}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44ae18c9fa11b9b45923f0a5a013a81c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &124426431
 GameObject:
   m_ObjectHideFlags: 0
@@ -15612,6 +15622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1a8ceb754f598148a0a81673db43591, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MagnetScript
+  dialogue: {fileID: 121942707}
   sparkParticles: {fileID: 1960761245}
   sparkSound: {fileID: 988971818}
 --- !u!95 &988971815

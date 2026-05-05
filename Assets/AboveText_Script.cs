@@ -140,4 +140,21 @@ public class DialogueTypewriter : MonoBehaviour
             audioSource.PlayOneShot(nextLineSound);
         }
     }
+
+    public void StartDialogueWithLines(string[] newLines)
+    {
+        gameObject.SetActive(true);
+
+        StopAllCoroutines();
+
+        dialogueLines = newLines;
+        currentLine = 0;
+        isTyping = false;
+        isTransitioning = false;
+
+        dialogueText.text = "";
+        dialogueBox.anchoredPosition = hiddenPosition;
+
+        StartCoroutine(StartDialogue());
+    }
 }
