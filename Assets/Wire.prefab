@@ -109,3 +109,4 @@ MonoBehaviour:
   target: {fileID: 0}
   targetPort: 
   width: 0.18
+  pinned: 0

@@ -13,6 +13,7 @@ public class Node : MonoBehaviour
     [SerializeField] private float pulseDecay = 4f;
     [SerializeField] private Color idleColor = Color.white;
     [SerializeField] private Color activeColor = new(0.35f, 1f, 0.55f, 1f);
+    [SerializeField, Tooltip("Prevents player tools from moving or editing this node.")] private bool pinned;
 
     private readonly List<Wire> outgoingFlowWires = new();
     private readonly List<Wire> incomingValueWires = new();
@@ -20,6 +21,8 @@ public class Node : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Vector3 baseScale;
     private float pulse;
+
+    public bool IsPinned => pinned;
 
     protected virtual void Awake()
     {

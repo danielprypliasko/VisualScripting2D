@@ -14,6 +14,12 @@ public class FlowWire : Wire
 {
     [SerializeField] private FlowWireOutputPort outputPort;
 
+    public void SetOutputPort(FlowWireOutputPort port)
+    {
+        outputPort = port;
+        SetSourcePort(outputPort.ToString());
+    }
+
     protected override WireKind GetWireKind()
     {
         return WireKind.Flow;

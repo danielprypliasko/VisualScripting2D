@@ -17,6 +17,7 @@ public class ValueWire : Wire
     public void SetInputPort(ValueWireInputPort port)
     {
         inputPort = port;
+        SetTargetPort(inputPort.ToString());
     }
 
     protected override WireKind GetWireKind()
