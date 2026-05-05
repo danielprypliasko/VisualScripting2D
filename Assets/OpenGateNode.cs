@@ -1,9 +1,9 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class GateNode : Node
 {
     [SerializeField] private Transform inputPoint;
+    [SerializeField] private Transform outputPoint;
     [SerializeField] private Animator gateAnimator;
     [SerializeField] private float xpReward = 25f;
     private bool hasGivenXP = false;
@@ -41,6 +41,7 @@ public class GateNode : Node
     {
         return NormalizePort(port, FlowOutPort) switch
         {
+            FlowOutPort => ResolveAnchor(outputPoint),
             _ => null
         };
     }
