@@ -14,6 +14,11 @@ public class ValueWire : Wire
 {
     [SerializeField] private ValueWireInputPort inputPort = ValueWireInputPort.Value;
 
+    public void SetInputPort(ValueWireInputPort port)
+    {
+        inputPort = port;
+    }
+
     protected override WireKind GetWireKind()
     {
         return WireKind.Value;
