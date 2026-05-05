@@ -20,6 +20,7 @@ public class Wire : MonoBehaviour
     [SerializeField] private Node target;
     [SerializeField, HideInInspector] private string targetPort;
     [SerializeField] private float width = 0.18f;
+    [SerializeField, Tooltip("Prevents player tools from deleting or editing this wire.")] private bool pinned;
 
     private static Material wireMaterial;
     private static readonly Color FlowIdleColor = new(1f, 0.85f, 0.35f, 1f);
@@ -44,8 +45,11 @@ public class Wire : MonoBehaviour
     private Node registeredFlowSource;
     private Node registeredValueTarget;
     private float pulse;
+    private bool hasPreviewTarget;
+    private Vector3 previewTargetPosition;
 
     public WireKind Kind => GetWireKind();
+    public bool IsPinned => pinned;
 
     public Node Source
     {
@@ -60,18 +64,49 @@ public class Wire : MonoBehaviour
 
     public string SourcePort => GetSourcePort();
 
+    public void SetSourcePort(string port)
+    {
+        sourcePort = Node.NormalizePort(port, GetWireKind() == WireKind.Value ? Node.ValuePort : Node.FlowOutPort);
+        RefreshRegistration();
+        RebuildMesh();
+    }
+
     public Node Target
     {
         get => target;
         set
         {
             target = value;
+            if (target != null)
+            {
+                hasPreviewTarget = false;
+            }
             RefreshRegistration();
             RebuildMesh();
         }
     }
 
     public string TargetPort => GetTargetPort();
+
+    public void SetTargetPort(string port)
+    {
+        targetPort = Node.NormalizePort(port, GetWireKind() == WireKind.Value ? Node.ValuePort : Node.FlowInPort);
+        RefreshRegistration();
+        RebuildMesh();
+    }
+
+    public void SetPreviewTarget(Vector3 position)
+    {
+        previewTargetPosition = position;
+        hasPreviewTarget = true;
+        RebuildMesh();
+    }
+
+    public void ClearPreviewTarget()
+    {
+        hasPreviewTarget = false;
+        RebuildMesh();
+    }
 
     protected virtual WireKind GetWireKind()
     {
@@ -279,23 +314,37 @@ public class Wire : MonoBehaviour
         EnsureSetup();
         wireMesh.Clear();
 
-        if (source == null || target == null)
+        if (source == null || (target == null && !hasPreviewTarget))
         {
             meshRenderer.enabled = false;
             return;
         }
 
         var startPoint = source.GetOutputAnchor(SourcePort);
-        var endPoint = target.GetInputAnchor(TargetPort);
 
-        if (startPoint == null || endPoint == null)
+        if (startPoint == null)
         {
             meshRenderer.enabled = false;
             return;
         }
 
         var start = startPoint.position;
-        var end = endPoint.position;
+        var end = previewTargetPosition;
+        Transform endPoint = null;
+
+        if (target != null)
+        {
+            endPoint = target.GetInputAnchor(TargetPort);
+
+            if (endPoint == null)
+            {
+                meshRenderer.enabled = false;
+                return;
+            }
+
+            end = endPoint.position;
+        }
+
         var distance = Vector2.Distance(start, end);
 
         if (distance <= 0.001f)
@@ -306,7 +355,7 @@ public class Wire : MonoBehaviour
 
         var handleLength = Mathf.Max(MinHandleLength, distance * CurveStrength);
         var controlA = start + GetOutDirection(startPoint) * handleLength;
-        var controlB = end + GetInDirection(endPoint) * handleLength;
+        var controlB = end + (endPoint != null ? GetInDirection(endPoint) : GetPreviewInDirection(start, end)) * handleLength;
 
         curvePoints.Clear();
         curvePoints.Add(start);
@@ -489,6 +538,13 @@ public class Wire : MonoBehaviour
     private static Vector3 GetInDirection(Transform point)
     {
         var direction = point != null ? -point.right : Vector3.left;
+        direction.z = 0f;
+        return direction.sqrMagnitude <= 0.000001f ? Vector3.left : direction.normalized;
+    }
+
+    private static Vector3 GetPreviewInDirection(Vector3 start, Vector3 end)
+    {
+        var direction = start - end;
         direction.z = 0f;
         return direction.sqrMagnitude <= 0.000001f ? Vector3.left : direction.normalized;
     }
