@@ -197,7 +197,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -1697233267
-  m_SortingLayer: 4
+  m_SortingLayer: 0
   m_SortingOrder: 3
   m_MaskInteraction: 0
   m_Sprite: {fileID: -5973495392976344752, guid: 7328279dbb5b297419274d544bba9577, type: 3}
@@ -290,7 +290,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.18}
+    oldSize: {x: 0.48, y: 0.48}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -376,7 +376,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: -1035213623
+  m_SortingLayerID: -86879321
   m_SortingLayer: 5
   m_SortingOrder: 0
   m_MaskInteraction: 0
@@ -4489,7 +4489,7 @@ Tilemap:
       - {fileID: 440871527, guid: b51fb7221046e481cb8aef166f4dd1b3, type: 3}
       - {fileID: -1691413034, guid: b51fb7221046e481cb8aef166f4dd1b3, type: 3}
       - {fileID: -1894178618, guid: b51fb7221046e481cb8aef166f4dd1b3, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 4, y: 3, z: 0}
@@ -5530,7 +5530,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: -951382437
+  m_SortingLayerID: 1412963297
   m_SortingLayer: 6
   m_SortingOrder: 0
   m_MaskInteraction: 0
@@ -5807,7 +5807,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: -311940629
+  m_SortingLayerID: 854798043
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_MaskInteraction: 0
@@ -21391,7 +21391,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: -1267106879
+  m_SortingLayerID: 352419615
   m_SortingLayer: 3
   m_SortingOrder: 0
   m_MaskInteraction: 0
@@ -26045,7 +26045,7 @@ Tilemap:
       - {fileID: -611878057, guid: b51fb7221046e481cb8aef166f4dd1b3, type: 3}
       - {fileID: 1423165207, guid: b51fb7221046e481cb8aef166f4dd1b3, type: 3}
       - {fileID: 1818384073, guid: b51fb7221046e481cb8aef166f4dd1b3, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 3, y: 1, z: 0}
@@ -26572,7 +26572,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 1792545535
+  m_SortingLayerID: -1154885409
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_MaskInteraction: 0
