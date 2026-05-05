@@ -5,6 +5,8 @@ public class GateNode : Node
 {
     [SerializeField] private Transform inputPoint;
     [SerializeField] private Animator gateAnimator;
+    [SerializeField] private float xpReward = 25f;
+    private bool hasGivenXP = false;
 
     public override void Execute(string inputPort, NodeFlowContext context)
     {
@@ -13,13 +15,16 @@ public class GateNode : Node
             return;
         }
 
-        bool canOpen = context.Graph.Get("value", NodeValue.FromBool(false)).AsBool();
-
-        if (canOpen)
+        if (XPController.instance != null && !hasGivenXP)
         {
-            gateAnimator.SetTrigger("OpenDoor");
+            hasGivenXP = true;
+            XPController.instance.AddXp(xpReward);
+
         }
-        ;
+
+        gateAnimator.SetTrigger("OpenDoor");
+
+        Emit(FlowOutPort, context);
 
     }
 
