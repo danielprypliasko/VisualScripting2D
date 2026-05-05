@@ -174,9 +174,7 @@ public class SimpleWireTool : MonoBehaviour
             string[] ports = { Node.ValuePort, Node.FlowInPort, Node.FlowOutPort, "A", "B" };
             foreach (string p in ports)
             {
-                Transform anchor = currentMode == ToolMode.Value ?
-                    n.GetInputAnchor(p) ?? n.GetOutputAnchor(p) :
-                    n.GetInputAnchor(p) ?? n.GetOutputAnchor(p);
+                Transform anchor = n.GetInputAnchor(p) ?? n.GetOutputAnchor(p);
 
                 if (anchor == null) continue;
 
