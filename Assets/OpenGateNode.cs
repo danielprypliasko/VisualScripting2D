@@ -18,6 +18,7 @@ public class GateNode : Node
         if (canOpen)
         {
             gateAnimator.SetTrigger("OpenDoor");
+            gateAnimator.SetTrigger("ActivateMagnet");
         }
         ;
 

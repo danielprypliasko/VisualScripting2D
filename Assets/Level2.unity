@@ -3506,7 +3506,7 @@ Tilemap:
       - {fileID: 1018268639, guid: b51fb7221046e481cb8aef166f4dd1b3, type: 3}
       - {fileID: 2025929543, guid: b51fb7221046e481cb8aef166f4dd1b3, type: 3}
       - {fileID: -41358088, guid: b51fb7221046e481cb8aef166f4dd1b3, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 0, y: 4, z: 0}
@@ -4059,7 +4059,7 @@ MonoBehaviour:
   activeColor: {r: 0.35, g: 1, b: 0.55, a: 1}
   pinned: 0
   inputPoint: {fileID: 1628139387}
-  gateAnimator: {fileID: 0}
+  gateAnimator: {fileID: 988971815}
 --- !u!61 &591478271
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10476,7 +10476,7 @@ Tilemap:
       - {fileID: -906258564, guid: b51fb7221046e481cb8aef166f4dd1b3, type: 3}
       - {fileID: 218401797, guid: b51fb7221046e481cb8aef166f4dd1b3, type: 3}
       - {fileID: 489410212, guid: b51fb7221046e481cb8aef166f4dd1b3, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -1, y: 6, z: 0}
@@ -10994,7 +10994,7 @@ Transform:
   m_GameObject: {fileID: 1324311931}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14.04, y: -24.8, z: 0}
+  m_LocalPosition: {x: -7.1, y: -21.03, z: 0}
   m_LocalScale: {x: 0.39999998, y: 0.39999998, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
